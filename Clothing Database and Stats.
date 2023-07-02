@@ -1,0 +1,24 @@
+/**Clothing list:
+Jackets( 15)
+Shirts (20)
+Pants (10)
+Snikers (5)
+fladas (20)
+**/
+
+CREATE TABLE clothing (id INTEGER PRIMARY KEY, articles TEXT, quantity INTEGER, precios INTEGER, YEARS INTEGER);
+
+SELECT * FROM Clothing list;
+
+INSERT INTO Clothing VALUES (1, "Jackets", 15,80,2000);
+INSERT INTO Clothing VALUES (2, "Shirts" ,20, 24, 1997);
+INSERT INTO Clothing VALUES (3, "Pants" , 10, 80, 2000);
+INSERT INTO Clothing VALUES (4, "tenis", 5, 15, 1995);
+INSERT INTO Clothing VALUES (5, "Faldas", 20, 30, 1993);
+
+Select * FROM clothing WHERE years > 1997 ORDER BY years;
+
+Select SUM(precios) FROM clothing; 
+
+SELECT articles, SUM(quantity) FROM clothing GROUP BY  articles; 
+
