@@ -377,22 +377,27 @@ INSERT INTO astronauts(Name,Year,GroupNum,Status,Birth_Date,Birth_Place,Gender,A
 INSERT INTO astronauts(Name,Year,GroupNum,Status,Birth_Date,Birth_Place,Gender,Alma_Mater,Undergraduate_Major,Graduate_Major,Military_Rank,Military_Branch,Space_Flights,Space_Flight_hr,Space_Walks,Space_Walks_hr,Missions,Death_Date,Death_Mission) VALUES ('John W. Young',1962,2,'Retired','9/24/1930','San Francisco, CA','Male','Georgia Institute of Technology','Aeronautical Engineering',NULL,'Captain','US Navy (Retired)',6,835,3,20,'Gemini 3, Gemini 10, Apollo 10, Apollo 16, STS-1 (Columbia), STS-9 (Columbia)',NULL,NULL);
 INSERT INTO astronauts(Name,Year,GroupNum,Status,Birth_Date,Birth_Place,Gender,Alma_Mater,Undergraduate_Major,Graduate_Major,Military_Rank,Military_Branch,Space_Flights,Space_Flight_hr,Space_Walks,Space_Walks_hr,Missions,Death_Date,Death_Mission) VALUES ('George D. Zamka',1998,17,'Retired','6/29/1962','Jersey City, NJ','Male','US Naval Academy; Florida Institute of Technology','Mathematics','Engineering Management','Colonel','US Marine Corps (Retired)',2,692,0,0,'STS-120 (Discovery), STS-130 (Endeavor)',NULL,NULL);
 
-Select * from astronauts;
+SELECT (Birth_Date ) FROM astronauts; 
 
-SELECT AVG (year) FROM astronauts;
+___What is the maximum Birth_Date from astronauts.
+ 
+SELECT ( Birth Date) FROM astronauts; 
 
-SELECT Max ( GroupNum ) FROM astronauts;
-
-SELECT Min( Birth_Date) FROM astronauts;
+___Show astronauts that Death_Date over 6 total 
 
 SELECT name, SUM(Death_Date) AS total_dt FROM astronauts GROUP BY Death_Date HAVING total_dt > 6;
- 
-SELECT name FROM astronauts WHERE undergraduate_major = "geology" and graduate_major = "null"; 
 
-SELECT name FROM astronauts WHERE undergraduate_major = "geology"or graduate_major = "null"; 
+____What astronauts have a geology undergraduate_major and  Military_Branch is US Army?
+
+SELECT name FROM astronauts WHERE undergraduate_major = "geology" and militar_branch = US Army; 
+
+____What astronauts have a geology undergraduate_major or  Military_Branch is US Army?
+SELECT name FROM astronauts WHERE undergraduate_major = "geology" or militar_branch = US Army;
+
+___A table that shows hight 
 
 SELECT name, year,groupnum
    CASE 
-   WHEN year > 2004 THEN "19"
-   ELSE 
+   WHEN year > 1980 then 'old'
+   ELSE old
    END;
