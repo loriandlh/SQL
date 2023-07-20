@@ -381,23 +381,30 @@ SELECT (Birth_Date ) FROM astronauts;
 
 ___What is the maximum Birth_Date from astronauts.
  
-SELECT ( Birth Date) FROM astronauts; 
+SELECT ( Birth_Date) FROM astronauts; 
 
-___Show astronauts that Death_Date over 6 total 
+
+___Show astronauts that Death_Date over 6 total.
 
 SELECT name, SUM(Death_Date) AS total_dt FROM astronauts GROUP BY Death_Date HAVING total_dt > 6;
 
+
+
 ____What astronauts have a geology undergraduate_major and  Military_Branch is US Army?
 
-SELECT name FROM astronauts WHERE undergraduate_major = "geology" and militar_branch = US Army; 
+SELECT name FROM astronauts WHERE undergraduate_major = "geology" and militarY_branch = "US Army"; 
 
 ____What astronauts have a geology undergraduate_major or  Military_Branch is US Army?
-SELECT name FROM astronauts WHERE undergraduate_major = "geology" or militar_branch = US Army;
+SELECT name FROM astronauts WHERE undergraduate_major = "geology" or militarY_branch = "US Army";
 
 ___A table that shows hight 
 
-SELECT name, year,groupnum
-   CASE 
-   WHEN year > 1980 then 'old'
-   ELSE old
-   END;
+SELECT name,year,groupnum FROM astronauts; 
+CASE 
+WHEN year > 1998 then "15"
+ELSE "0" 
+END AS " value" FROM astronauts
+GROUP BY "value"; 
+
+
+  
