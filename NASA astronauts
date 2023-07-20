@@ -399,12 +399,10 @@ SELECT name FROM astronauts WHERE undergraduate_major = "geology" or militarY_br
 
 ___A table that shows hight 
 
-SELECT name,year,groupnum FROM astronauts; 
-CASE 
-WHEN year > 1998 then "15"
-ELSE "0" 
-END AS " value" FROM astronauts
-GROUP BY "value"; 
-
+SELECT name, death_date
+    FROM astronauts
+    WHERE space_flight_hr >= 906
+    AND death_date IS NOT NULL
+    ORDER BY name;
 
   
