@@ -1,0 +1,59 @@
+/**In this project, you’re going to make your own table with some small 
+set of “famous people”, then make more tables about things they do and join 
+those to create nice human-readable lists. Contains at least two tables with at 
+least 15 rows total. One of the tables contains a column that relates to the primary key of another table.
+Has at least one query that does a JOIN.*/
+
+CREATE TABLE stars (id INTEGER PRIMARY KEY,
+    first_name TEXT,
+    last_name TEXT,
+    Birthdate TEXT,
+    favorite_color TEXT, 
+    favorite_hobby TEXT,
+    following_id INTEGER);
+
+INSERT INTO stars (first_name,last_name,birthdate,favorite_hobbies,favorite_color,following_id) VALUES (1, "Miley", "Cyrus", "11-23-1992", "Lime Green and Purple", " Swimming", 3)
+INSERT INTO stars (first_name,last_name,birthdate,favorite_hobbies,favorite_color,following_id) VALUES (2, "Kany","Garcia", "09-25-1982", "Blue", "hiking", 2)
+INSERT INTO stars (first_name,last_name,birthdate,favorite_hobbies,favorite_color,following_id) VALUES (3, "Jorgina","Guillermo ", "07-04-2002", "Pink", "Biking", 1)
+INSERT INTO stars (first_name,last_name,birthdate,favorite_hobbies,favorite_color,following_id) VALUES (4, "Carolina" "Giraldo", "02-02-1991", "Yellow" " riding two-wheel motorcycles", 4)
+INSERT INTO stars (first_name,last_name,birthdate,favorite_hobbies,favorite_color,following_id) VALUES (5, "Emmanuel", " Gazmey", "11-26-1992", 5)
+
+CREATE TABLE music (id integer primary key, song_title TEXT, genre TEXT, year INTEGER);
+
+INSERT INTO music (id integer primary key, song_title TEXT, genre TEXT, year INTEGER) VALUES ( 1, "Flowers", "Pop","2022")
+INSERT INTO music (id integer primary key, song_title TEXT, genre TEXT, year INTEGER) VALUES (2, "Titanic", "Balada","2020")
+INSERT INTO music (id integer primary key, song_title TEXT, genre TEXT, year INTEGER) VALUES (3, "Narcisista", "Bachata","2023")
+INSERT INTO music (id integer primary key, song_title TEXT, genre TEXT, year INTEGER) VALUES (4, "Gucci los panos", "Ranchera","2023")
+INSERT INTO music (id integer primary key, song_title TEXT, genre TEXT, year INTEGER) VALUES (5, "Secreto", "Latin Urbano", "Pop","2019")
+
+CREATE TABLE upcoming_concert (id integer primary key, location TEXT, date TEXT);
+
+CREATE TABLE upcoming_concert (id integer primary key, location TEXT, date TEXT) VALUES(1, "Null", "Null", "Null")
+CREATE TABLE upcoming_concert (id integer primary key, location TEXT, date TEXT) VALUES(2, "San Francisco,CA","Aug 30")
+CREATE TABLE upcoming_concert (id integer primary key, location TEXT, date TEXT) VALUES(3, "Null","Null","Null")
+CREATE TABLE upcoming_concert (id integer primary key, location TEXT, date TEXT) VALUES(4, "Chicago,IL","Aug 03")
+CREATE TABLE upcoming_concert (id integer primary key, location TEXT, date TEXT) VALUES(5, "Lorqui,Spain", "Jul 30")
+
+/ *INNER JOIN*/
+
+SELECT stars.first_name, stars.last_name, song_title.music
+FROM starts
+JOIN music
+ON stars.id = music.id;
+
+/ *LEFT JOIN*/
+
+SELECT stars.first_name starts.last_name starts, music.year
+FROM starts
+LEFT JOIN music
+ON  starts.id = music.id;
+
+/ *RIGHT JOIN*/
+
+SELECT stars.first_name, starts.last_name, upcoming_concert.location, upcoming_concert.date
+FROM starts
+RIGHT JOIN upcoming_concert
+ON starts.id= upcoming_concert.id
+GROUP BY stars.first_name
+ORDER BY upcoming_concert.location asc;
+ON  starts.id = music.id;
