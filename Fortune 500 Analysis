@@ -88,5 +88,5 @@ AND maternity_leave_weeks <12;
 4. # Which company in the technology industry has the highest revenue, and what's their revenue? 
 SELECT company_name, max(revenue)
 FROM fortune_companies
-WHERE industry = 'Technology'
+WHERE industry = 'Technology';
 
